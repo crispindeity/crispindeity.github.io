@@ -13,7 +13,7 @@ baseurl: ""
 lang: ko-KR
 
 # Additional parameters for datetime localization, optional. › https://github.com/iamkun/dayjs/tree/dev/src/locale
-prefer_datetime_locale: https://github.com/iamkun/dayjs/tree/dev/src/locale/ko.js
+prefer_datetime_locale: https://github.com/iamkun/dayjs/tree/dev/src/locale
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Seoul
@@ -21,9 +21,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: geombong blog # the main title
+title: geombong # the main title
 
-tagline: 안녕하세요. 백엔드 개발자를 꿈꾸는 검봉입니다. # it will display as the sub-title
+tagline: 안녕하세요 검봉입니다. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: "https://user-images.githubusercontent.com/78953393/170092466-b3834dde-d7e8-444e-a136-41affa7a5d45.jpeg"
+img_cdn: https://user-images.githubusercontent.com/78953393/170092466-b3834dde-d7e8-444e-a136-41affa7a5d45.jpeg
 
 # the avatar on sidebar, support local or CORS resources
 avatar:
@@ -195,3 +195,4 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+future: true
