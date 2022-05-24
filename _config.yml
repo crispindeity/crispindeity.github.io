@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn: https://user-images.githubusercontent.com/78953393/170092466-b3834dde-d7e8-444e-a136-41affa7a5d45.jpeg
+img_cdn: "https://user-images.githubusercontent.com/78953393/170092466-b3834dde-d7e8-444e-a136-41affa7a5d45.jpeg"
 
 # the avatar on sidebar, support local or CORS resources
 avatar:
@@ -89,14 +89,16 @@ avatar:
 toc: true
 
 comments:
+  provider: "utterances"
   active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
+    repo: "geombong/geombong.github.io"
+    issue_term: "pathname" # < url | pathname | title | ...>
+    theme: "github-dark"
   # Giscus options › https://giscus.app
   giscus:
     repo: # <gh-username>/<repo>
