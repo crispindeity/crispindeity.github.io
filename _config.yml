@@ -21,9 +21,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: geombong blog # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 안녕하세요. 백엔드 개발자를 꿈꾸는 검봉입니다. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
@@ -32,20 +32,20 @@ description: >- # used by seo meta and the atom feed
 url: "https://geombong.github.io"
 
 github:
-  username: github_username # change to your github username
+  username: geombong # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: geombong11 # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: your_full_name
-  email: example@doamin.com # change to your email address
+  email: shoy1415@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
+    - https://twitter.com/geombong11 # change to your twitter homepage
+    - https://github.com/geombong # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: "https://user-images.githubusercontent.com/78953393/170092466-b3834dde-d7e8-444e-a136-41affa7a5d45.jpeg"
 
 # the avatar on sidebar, support local or CORS resources
 avatar:
