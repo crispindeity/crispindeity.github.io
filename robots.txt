@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geombong.github.io/sitemap.xml
