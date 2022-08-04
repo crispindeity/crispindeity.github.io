@@ -26,7 +26,7 @@ title: geombong # the main title
 tagline: 관인엄기 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  개발자 지망생의 테크 블로그 입니다.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://geombong.github.io"
