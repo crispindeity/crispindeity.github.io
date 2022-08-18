@@ -1,10 +1,10 @@
 ---
-title: (TIL)UnitTest
+title: (Test)UnitTest
 author: geombong
 date: 2022-07-20 23:21:00 +0900
 modified: 2022-07-20 23:21:00 +0900
-categories: [TIL]
-tags: [TIL]
+categories: [Test]
+tags: [Test]
 pin: false
 ---
 
