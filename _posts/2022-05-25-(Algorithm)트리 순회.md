@@ -2,8 +2,8 @@
 title: (Algorithm)트리 순회
 author: geombong
 date: 2022-05-25 02:16:00 +0800
-categories: [알고리즘]
-tags: [알고리즘]
+categories: [Algorithm]
+tags: [Algorithm]
 pin: false
 ---
 
