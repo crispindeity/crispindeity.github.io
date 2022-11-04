@@ -106,6 +106,11 @@ comments:
     category: Announcements
     category_id: DIC_kwDOHY7q0M4CSXU2
     mapping: pathname # optional, default to 'pathname'
+    strict: 0
+    reactions-enabled: 1
+    emit-metadata: 0
+    theme: dark
+    crossorigin: anonymous
     input_position: bottom # optional, default to 'bottom'
     lang: ko # optional, default to the value of `site.lang`
 
