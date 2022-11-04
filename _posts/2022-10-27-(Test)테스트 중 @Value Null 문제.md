@@ -1,10 +1,10 @@
 ---
-title: (Test)테스트 중 @Value Null 문제
+title: (TEST)테스트 중 @Value Null 문제
 author: geombong
 date: 2022-10-27 15:06:00 +0900
 modified: 2022-10-27 15:06:00 +0900
-categories: [Test]
-tags: [Test]
+categories: [TEST]
+tags: [TEST]
 pin: false
 ---
 
