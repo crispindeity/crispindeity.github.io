@@ -1,10 +1,10 @@
 ---
-title: (PORJECT)Enum Converter
+title: (Project)Enum Converter
 author: geombong
 date: 2022-10-19 01:19:00 +0900
 modified: 2022-10-19 01:19:00 +0900
-categories: [PORJECT]
-tags: [PORJECT]
+categories: [Project]
+tags: [Project]
 pin: false
 ---
 

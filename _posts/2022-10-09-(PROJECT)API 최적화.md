@@ -1,10 +1,10 @@
 ---
-title: (PORJECT)API 최적화
+title: (Project)API 최적화
 author: geombong
 date: 2022-10-09 23:30:00 +0900
 modified: 2022-10-09 23:30:00 +0900
-categories: [PORJECT]
-tags: [PORJECT]
+categories: [Project]
+tags: [Project]
 pin: false
 ---
 
