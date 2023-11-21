@@ -8,7 +8,7 @@ tags: [Spring]
 pin: false
 ---
 
-## Warning ‼️
+## ‼️ Warning
 ```textile
 - 아래 모든 내용은 제가 공부하며, 작성한 내용이므로 잘못된 내용이 포함될 수 있습니다.
 - 잘못된 내용에 대해 댓글을 남겨주신다면 정말 감사드리겠습니다. 
@@ -76,6 +76,7 @@ jwt:
 
 - `@Value` 어노테이션 과 비슷하게 외부의 값을 가져올때 사용할 수 있다.
 - 스프링 팀에서 권장하는 방법
+
 ```java
 @ConfigurationProperties(prefix = "spring.jpa")
 public class JpaProperties {
@@ -92,6 +93,7 @@ public class RedisProperties {
 ### 간단한 예제
 
 - 이번에는 `JavaMailSender` 를 `Bean` 으로 등록 하고 사용할때 외부에서 값을 넣어줘야 하는 부분이 있어 사용하게 되었다.
+
 ```java
 @ConfigurationProperties(prefix = "spring.mail")
 public record MailSetting(String host, int port, String username, String password) {
