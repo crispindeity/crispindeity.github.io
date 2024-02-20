@@ -1,6 +1,5 @@
 ---
 title: (Spring)@ModelAttribute
-author: crispin
 date: 2022-12-16 12:30:00 +0900
 modified: 2022-12-16 12:30:00 +0900
 categories: [Spring]

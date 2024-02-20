@@ -1,6 +1,5 @@
 ---
 title: (JPA)엔티티 업데이트 시 발생한 문제(Dirty Checking, @PreUpdate)
-author: geombong
 date: 2022-10-31 18:18:00 +0900
 modified: 2022-10-31 18:18:00 +0900
 categories: [JPA]

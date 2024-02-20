@@ -1,6 +1,5 @@
 ---
 title: (Python)Python 가상환경 설정
-author: crispin
 date: 2023-01-22 23:22:00 +0900
 modified: 2023-01-22 23:22:00 +0900
 categories: [Python]

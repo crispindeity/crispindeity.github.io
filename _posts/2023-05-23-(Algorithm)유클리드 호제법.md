@@ -1,6 +1,5 @@
 ---
 title: (Algorithm)유클리드 호제법
-author: crispin
 date: 2023-05-23 12:47:00 +0900
 modified: 2023-05-23 12:47:00 +0900
 categories: [Algorithm]

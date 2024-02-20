@@ -1,6 +1,5 @@
 ---
 title: (Spring)@ConfigurationProperties
-author: crispin
 date: 2023-11-21 23:13:00 +0900
 modified: 2023-11-21 23:13:00 +0900
 categories: [Spring]
