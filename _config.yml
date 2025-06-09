@@ -122,7 +122,7 @@ comments:
     repo_id: R_kgDOHY7q0A
     category: Announcements
     category_id: DIC_kwDOHY7q0M4CSXU2
-    mapping: pathname
+    mapping: title
     strict: 0
     input_position: # optional, default to 'bottom'
     lang: ko # optional, default to the value of `site.lang`
