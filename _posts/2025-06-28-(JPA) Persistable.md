@@ -213,7 +213,7 @@ public class SimpleJpaRepository<T, ID> implements JpaRepositoryImplementation<T
 public class JpaMetamodelEntityInformation<T, ID> extends JpaEntityInformationSupport<T, ID> {
     // ...
     @Override
-        public boolean isNew(T entity) {
+    public boolean isNew(T entity) {
         
         if (versionAttribute.isEmpty()
         		|| versionAttribute.map(Attribute::getJavaType).map(Class::isPrimitive).orElse(false)) {
