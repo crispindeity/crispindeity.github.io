@@ -183,20 +183,20 @@ public class SimpleJpaRepository<T, ID> implements JpaRepositoryImplementation<T
     // ...
     
     @Override
-	@Transactional
-	public <S extends T> S save(S entity) {
-
-		Assert.notNull(entity, ENTITY_MUST_NOT_BE_NULL);
-
-		if (entityInformation.isNew(entity)) {
-			entityManager.persist(entity);
-			return entity;
-		} else {
-			return entityManager.merge(entity);
-		}
-	}
-	
-	// ...
+    @Transactional
+    public <S extends T> S save(S entity) {
+        
+        Assert.notNull(entity, ENTITY_MUST_NOT_BE_NULL);
+        
+        if (entityInformation.isNew(entity)) {
+        	entityManager.persist(entity);
+        	return entity;
+        } else {
+        	return entityManager.merge(entity);
+        }
+    }
+    
+    // ...
 }
 ```
 여기서 우리는 3가지를 중점적으로 봐야 한다.
@@ -213,17 +213,17 @@ public class SimpleJpaRepository<T, ID> implements JpaRepositoryImplementation<T
 public class JpaMetamodelEntityInformation<T, ID> extends JpaEntityInformationSupport<T, ID> {
     // ...
     @Override
-	public boolean isNew(T entity) {
-
-		if (versionAttribute.isEmpty()
-				|| versionAttribute.map(Attribute::getJavaType).map(Class::isPrimitive).orElse(false)) {
-			return super.isNew(entity);
-		}
-
-		BeanWrapper wrapper = new DirectFieldAccessFallbackBeanWrapper(entity);
-
-		return versionAttribute.map(it -> wrapper.getPropertyValue(it.getName()) == null).orElse(true);
-	}
+        public boolean isNew(T entity) {
+        
+        if (versionAttribute.isEmpty()
+        		|| versionAttribute.map(Attribute::getJavaType).map(Class::isPrimitive).orElse(false)) {
+        	return super.isNew(entity);
+        }
+        
+        BeanWrapper wrapper = new DirectFieldAccessFallbackBeanWrapper(entity);
+        
+        return versionAttribute.map(it -> wrapper.getPropertyValue(it.getName()) == null).orElse(true);
+    }
     // ...
 }
 ```
@@ -240,24 +240,24 @@ public abstract class AbstractEntityInformation<T, ID> implements EntityInformat
 
     // ...
     
-	@Override
-	public boolean isNew(T entity) {
-
-		ID id = getId(entity);           // 1. id 값을 가지고 온다.
-		Class<ID> idType = getIdType();
-
-		if (!idType.isPrimitive()) {     // 2. id 값이 primitive 타입인지 reference 타입인지 확인 
-			return id == null;
-		}
-
-		if (id instanceof Number n) {.   // 3. id 값이 Number instance 인지 확인
-			return n.longValue() == 0L;  // 4. id 값이 0 인지 확인
-		}
-
-		throw new IllegalArgumentException(String.format("Unsupported primitive id type %s", idType));
-	}
-	
-	// ...
+    @Override
+    public boolean isNew(T entity) {
+    
+        ID id = getId(entity);           // 1. id 값을 가지고 온다.
+        Class<ID> idType = getIdType();
+        
+        if (!idType.isPrimitive()) {     // 2. id 값이 primitive 타입인지 reference 타입인지 확인 
+        	return id == null;
+        }
+        
+        if (id instanceof Number n) {.   // 3. id 값이 Number instance 인지 확인
+        	return n.longValue() == 0L;  // 4. id 값이 0 인지 확인
+        }
+        
+        throw new IllegalArgumentException(String.format("Unsupported primitive id type %s", idType));
+    }
+    
+    // ...
 }
 ```
 해당 메서드에서 `entity` 의 `id` 값을 가져와 여러 조건에 맞는지 확인하는데 우리가 지정해준 값(1L)을 가지고 확인해보자.
@@ -276,14 +276,14 @@ public abstract class AbstractEntityInformation<T, ID> implements EntityInformat
 @Transactional
 public <S extends T> S save(S entity) {
 
-	Assert.notNull(entity, ENTITY_MUST_NOT_BE_NULL);
-
-	if (entityInformation.isNew(entity)) {
-		entityManager.persist(entity);
-		return entity;
-	} else {
-		return entityManager.merge(entity);
-	}
+    Assert.notNull(entity, ENTITY_MUST_NOT_BE_NULL);
+    
+    if (entityInformation.isNew(entity)) {
+    	entityManager.persist(entity);
+    	return entity;
+    } else {
+    	return entityManager.merge(entity);
+    }
 }
 ```
 `save()` 메서드를 보면 `isNew()` 가 `false` 일때 `merge` 를 호출하도록 되어 있다.  
@@ -325,20 +325,20 @@ public <S extends T> S save(S entity) {
 ```kotlin
 public interface Persistable<ID> {
 
-	/**
-	 * Returns the id of the entity.
-	 *
-	 * @return the id. Can be {@literal null}.
-	 */
-	@Nullable
-	ID getId();
-
-	/**
-	 * Returns if the {@code Persistable} is new or was persisted already.
-	 *
-	 * @return if {@literal true} the object is new.
-	 */
-	boolean isNew();
+    /**
+    * Returns the id of the entity.
+    *
+    * @return the id. Can be {@literal null}.
+    */
+    @Nullable
+    ID getId();
+    
+    /**
+    * Returns if the {@code Persistable} is new or was persisted already.
+    *
+    * @return if {@literal true} the object is new.
+    */
+    boolean isNew();
 }
 ```
 
@@ -381,30 +381,30 @@ interface UserRepository : JpaRepository<UserEntity, Long>
 
 ```kotlin
 public class JpaPersistableEntityInformation<T extends Persistable<ID>, ID>
-		extends JpaMetamodelEntityInformation<T, ID> {
-
-	/**
-	 * Creates a new {@link JpaPersistableEntityInformation} for the given domain class and {@link Metamodel}.
-	 * 
-	 * @param domainClass must not be {@literal null}.
-	 * @param metamodel must not be {@literal null}.
-	 * @param persistenceUnitUtil must not be {@literal null}.
-	 */
-	public JpaPersistableEntityInformation(Class<T> domainClass, Metamodel metamodel,
-			PersistenceUnitUtil persistenceUnitUtil) {
-		super(domainClass, metamodel, persistenceUnitUtil);
-	}
-
-	@Override
-	public boolean isNew(T entity) {
-		return entity.isNew();
-	}
-
-	@Nullable
-	@Override
-	public ID getId(T entity) {
-		return entity.getId();
-	}
+        extends JpaMetamodelEntityInformation<T, ID> {
+    
+    /**
+    * Creates a new {@link JpaPersistableEntityInformation} for the given domain class and {@link Metamodel}.
+    * 
+    * @param domainClass must not be {@literal null}.
+    * @param metamodel must not be {@literal null}.
+    * @param persistenceUnitUtil must not be {@literal null}.
+    */
+    public JpaPersistableEntityInformation(Class<T> domainClass, Metamodel metamodel,
+        	PersistenceUnitUtil persistenceUnitUtil) {
+        super(domainClass, metamodel, persistenceUnitUtil);
+    }
+    
+    @Override
+    public boolean isNew(T entity) {
+        return entity.isNew();
+    }
+    
+    @Nullable
+    @Override
+    public ID getId(T entity) {
+        return entity.getId();
+    }
 }
 ```
 여기서 `entity.isNew()` 를 호출하고 `return` 하는데 이게 바로 `Persistable` 의 `isNew()` 메서드다.  
